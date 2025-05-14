@@ -33,6 +33,12 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function posts()
+{
+    return $this->hasMany(Post::class);
+}
+
+
     /**
      * The attributes that should be cast.
      *
@@ -42,4 +48,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
 }
